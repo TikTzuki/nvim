@@ -2,16 +2,6 @@
 
 ![NVCode pic](./utils/images/nvim.png)
 
-## Install in one command
-
-The following will install this config if you have an existing config it will move it to `~/.config/nvim.old`
-
-This script only supports Mac, Ubuntu and Arch
-
-```
-bash <(curl -s https://raw.githubusercontent.com/ChristianChiarulli/nvim/master/utils/install.sh)
-```
-
 ## Install Neovim
 
 - Mac
@@ -24,12 +14,31 @@ bash <(curl -s https://raw.githubusercontent.com/ChristianChiarulli/nvim/master/
 
 - Ubuntu
 
+  Opt1: Automatic
+
   ```
   curl -l https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage > /tmp/nvim.appimage
 
   sudo mv /tmp/nvim.appimage /usr/local/bin/nvim
 
   chmod +x /usr/local/bin/nvim
+  ```
+
+  Opt2: Manual
+  Download appimage from:
+  https://github.com/neovim/neovim/releases/nightly
+
+  ```
+  mv ~/Downloads/nvim.appimage /usr/local/bin/nvim
+
+  # CUSTOM_NVIM_PATH=/usr/local/bin/nvim
+  # Set the above with the correct path, then run the rest of the commands:
+  set -u
+  sudo update-alternatives --install /usr/bin/ex ex "${CUSTOM_NVIM_PATH}" 110
+  sudo update-alternatives --install /usr/bin/vi vi "${CUSTOM_NVIM_PATH}" 110
+  sudo update-alternatives --install /usr/bin/view view "${CUSTOM_NVIM_PATH}" 110
+  sudo update-alternatives --install /usr/bin/vim vim "${CUSTOM_NVIM_PATH}" 110
+  sudo update-alternatives --install /usr/bin/vimdiff vimdiff "${CUSTOM_NVIM_PATH}" 110
   ```
 
 - Arch
@@ -41,13 +50,13 @@ bash <(curl -s https://raw.githubusercontent.com/ChristianChiarulli/nvim/master/
 ## Clone this repo into your config
 
 ```
-git clone https://github.com/ChristianChiarulli/nvim.git ~/.config/nvim
+git clone https://github.com/TikTzuki/nvim.git ~/.config/nvim
 ```
 
 ## Install python & node support
 
 ```
-pip install pynvim
+pip3 install pynvim
 ```
 
 ```
@@ -96,16 +105,19 @@ let g:node_host_prog = expand("~/.nvm/versions/node/v12.16.1/bin/neovim-node-hos
 
 ## List of programs you should install
 
-- ranger
-- ueberzug
-- ripgrep
-- silver_searcher
-- fd
+- nodejs: sudo apt install nodejs
+- npm: sudo apt install npm
+- pip3: sudo apt-get install python3-pip
+- pynvim: pip3 install pynvim
+- fzf: sudo apt install fzf
+- ranger: sudo apt install ranger
+- ueberzug :
+- ripgrep: sudo apt install ripgrep
+- silver_searcher: sudo apt instsall silversearcher-ag
+- fd: sudo apt install fd-find
 - universal-ctags
 - lazy git
 - lazy docker
-
-Explanations and installation instruction can be found on my blog
 
 ## Language Servers
 
