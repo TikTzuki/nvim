@@ -103,4 +103,9 @@ endif
 
 " Better nav for omnicomplete
 inoremap <expr> <c-j> ("\<C-n>")
-inoremap <expr> <c-k> ("\<C-p>")
+tnoremap <expr> <c-k> ("\<C-p>")
+
+" Config relative toggle
+nnoremap <silent> <C-r> :RelativizeToggle<CR>
+" Fuzzy search
+nnoremap <C-f> :FZF<CR>
