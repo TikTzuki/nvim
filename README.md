@@ -228,3 +228,13 @@ If anyone reading this has any suggestions about implementing any of the followi
 - later manually link pylance
 - resize with arrows in addition to meta
 - how to support meta key on for macOS?
+
+## FOR JAVA DEVELOPMENT
+
+- jre-14: sudo apt install openjdk-14-jre-headless
+- jdk-14: sudo apt install openjdk-14-jdk-headless
+- setup lombok
+  ```
+  sudo mkdir /usr/local/share/lombok
+  sudo wget https://projectlombok.org/downloads/lombok.jar -O /usr/local/share/lombok/lombok.jar
+  ```
