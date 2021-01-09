@@ -100,12 +100,11 @@ else
   endif
 
 endif
-
 " Better nav for omnicomplete
 inoremap <expr> <c-j> ("\<C-n>")
 tnoremap <expr> <c-k> ("\<C-p>")
 
 " Config relative toggle
-nnoremap <silent> <C-r> :RelativizeToggle<CR>
+nnoremap <C-n>r :RelativizeToggle<CR>
 " Fuzzy search
 nnoremap <C-f> :FZF<CR>
