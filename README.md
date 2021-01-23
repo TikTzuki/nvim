@@ -14,22 +14,16 @@
 
 - Ubuntu
 
+  ```
   Opt1: Automatic
-
-  ```
-  curl -l https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage > /tmp/nvim.appimage
-
-  sudo mv /tmp/nvim.appimage /usr/local/bin/nvim
-
-  chmod +x /usr/local/bin/nvim
-  ```
+  wget https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
 
   Opt2: Manual
-  Download appimage from:
-  https://github.com/neovim/neovim/releases/nightly
+  Download appimage from: https://github.com/neovim/neovim/releases/nightly
 
-  ```
-  mv ~/Downloads/nvim.appimage /usr/local/bin/nvim
+  sudo mv nvim.appimage /usr/local/bin/nvim
+
+  chmod +x /usr/local/bin/nvim
 
   # CUSTOM_NVIM_PATH=/usr/local/bin/nvim
   # Set the above with the correct path, then run the rest of the commands:
@@ -39,6 +33,7 @@
   sudo update-alternatives --install /usr/bin/view view "${CUSTOM_NVIM_PATH}" 110
   sudo update-alternatives --install /usr/bin/vim vim "${CUSTOM_NVIM_PATH}" 110
   sudo update-alternatives --install /usr/bin/vimdiff vimdiff "${CUSTOM_NVIM_PATH}" 110
+  sudo update-alternatives --install /usr/bin/nvim nvim "${CUSTOM_NVIM_PATH}" 110
   ```
 
 - Arch
@@ -53,27 +48,21 @@
 git clone https://github.com/TikTzuki/nvim.git ~/.config/nvim
 ```
 
-## Install python & node support
+## List of programs you should install
 
-```
-pip3 install pynvim
-```
-
-```
-npm i -g neovim
-```
-
-## Install Neovim remote
-
-```
-pip install neovim-remote
-```
-
-This will install `nvr` to `~/.local/bin` so you will need to add the following to your `bashrc` or `zshrc`
-
-```
-export PATH=$HOME/.local/bin:$PATH
-```
+- nodejs: sudo apt install nodejs
+- npm: sudo apt install npm
+- pip3: sudo apt install python3-pip
+- pynvim: pip3 install pynvim
+- fzf: sudo apt install fzf
+- ranger: sudo apt install ranger
+- ueberzug :
+- ripgrep: sudo apt install ripgrep
+- silver_searcher: sudo apt instsall silversearcher-ag
+- fd: sudo apt install fd-find
+- universal-ctags
+- lazy git
+- lazy docker
 
 ## Install clipboard support
 
@@ -91,6 +80,51 @@ export PATH=$HOME/.local/bin:$PATH
   sudo pacman -S xsel
   ```
 
+## Install python & node support
+
+```
+sudo pip3 install pynvim
+
+sudo npm i -g neovim
+```
+
+## Install all neovim plugins
+
+- Open nvim and type:
+
+```
+:PlugInstall
+```
+
+## For java development
+
+- jre-14: sudo apt install openjdk-14-jre-headless
+- jdk-14: sudo apt install openjdk-14-jdk-headless
+- setup lombok
+  ```
+  sudo mkdir /usr/local/share/lombok
+  cd /usr/local/share
+  sudo wget https://projectlombok.org/downloads/lombok.jar -O /usr/local/share/lombok/lombok.jar
+  ```
+
+## Install a nerdfont
+
+https://github.com/ryanoasis/nerd-fonts
+
+# All of above is optional
+
+## Install Neovim remote
+
+```
+pip install neovim-remote
+```
+
+This will install `nvr` to `~/.local/bin` so you will need to add the following to your `bashrc` or `zshrc`
+
+```
+export PATH=$HOME/.local/bin:$PATH
+```
+
 ## (Optional) Install python & node support using virtual environments
 
 Make sure to add these paths somewhere in your config
@@ -102,22 +136,6 @@ let g:python3_host_prog = expand("~/.miniconda/envs/neovim/bin/python3.8") " <- 
 let g:node_host_prog = expand("<path to node with neovim installed>")
 let g:node_host_prog = expand("~/.nvm/versions/node/v12.16.1/bin/neovim-node-host") " <- example
 ```
-
-## List of programs you should install
-
-- nodejs: sudo apt install nodejs
-- npm: sudo apt install npm
-- pip3: sudo apt-get install python3-pip
-- pynvim: pip3 install pynvim
-- fzf: sudo apt install fzf
-- ranger: sudo apt install ranger
-- ueberzug :
-- ripgrep: sudo apt install ripgrep
-- silver_searcher: sudo apt instsall silversearcher-ag
-- fd: sudo apt install fd-find
-- universal-ctags
-- lazy git
-- lazy docker
 
 ## Language Servers
 
@@ -228,13 +246,3 @@ If anyone reading this has any suggestions about implementing any of the followi
 - later manually link pylance
 - resize with arrows in addition to meta
 - how to support meta key on for macOS?
-
-## FOR JAVA DEVELOPMENT
-
-- jre-14: sudo apt install openjdk-14-jre-headless
-- jdk-14: sudo apt install openjdk-14-jdk-headless
-- setup lombok
-  ```
-  sudo mkdir /usr/local/share/lombok
-  sudo wget https://projectlombok.org/downloads/lombok.jar -O /usr/local/share/lombok/lombok.jar
-  ```
