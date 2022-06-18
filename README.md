@@ -50,7 +50,7 @@ git clone https://github.com/TikTzuki/nvim.git ~/.config/nvim
 
 ## List of programs you should install
 
-- nodejs: sudo apt install nodejs
+- nodejs: sudo apt install nodejs (curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -sudo apt-get install -y nodejs)
 - npm: sudo apt install npm
 - pip3: sudo apt install python3-pip
 - pynvim: pip3 install pynvim
