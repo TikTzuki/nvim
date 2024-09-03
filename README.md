@@ -63,6 +63,7 @@ git clone https://github.com/TikTzuki/nvim.git ~/.config/nvim
 - universal-ctags
 - lazy git
 - lazy docker
+- sudo apt install fzf ranger ripgrep silversearcher-ag fd-find
 
 ## Install clipboard support
 
