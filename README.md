@@ -30,8 +30,11 @@ Update plugins with `:Lazy update` (writes the lockfile), then commit the change
 | `stevearc/oil.nvim` | edit directories as buffers (`-`) |
 | `ThePrimeagen/harpoon` (harpoon2) | pin hot files, jump with `<leader>1..4` |
 | `echasnovski/mini.icons` | filetype icons (needs a Nerd Font in the terminal) |
+| `folke/which-key.nvim` | pause after `<space>` to see what comes next |
 
 ## Keymaps (leader = space)
+
+Full list in [`CHEATSHEET.md`](CHEATSHEET.md); open it inside Neovim with `<space>?`.
 
 | Keys | Action |
 |------|--------|
