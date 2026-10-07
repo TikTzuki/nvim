@@ -49,6 +49,60 @@ Habit: `Shift-Tab` into plan mode for anything non-trivial, read the plan, appro
 | `<space>e` | File explorer sidebar |
 | `-` | Oil: parent directory as an editable buffer (rename, delete, `:w` to apply) |
 
+## File tree
+
+Two tools, two jobs. The **explorer** (`<space>e`) is a sidebar for looking around.
+**Oil** (`-`) turns a directory into a text buffer for changing it.
+
+### Explorer sidebar (`<space>e`, snacks)
+
+| Keys | What |
+|---|---|
+| `<space>e` | Toggle the sidebar; it opens at the workspace root |
+| `j` / `k`, type to filter | Move; typing narrows the tree like a fuzzy finder |
+| `l` / `Enter` | Open file, or expand a folder |
+| `h` | Collapse the folder (or jump to its parent) |
+| `Backspace` | Go up: make the parent the root |
+| `.` | Make the folder under the cursor the root |
+| `Z` | Collapse everything |
+| `a` | New file; end the name with `/` to make a folder |
+| `r` / `d` | Rename / delete |
+| `c` / `m` | Copy / move the item under the cursor |
+| `y` then `p` | Yank a path, paste it (copy) into another folder |
+| `o` | Open with the system app |
+| `P` | Toggle the preview pane |
+| `H` / `I` | Show hidden files / show git-ignored files |
+| `u` | Refresh |
+| `<space>/` | Grep inside the folder under the cursor |
+| `Ctrl-t` | Terminal in the folder under the cursor |
+| `Ctrl-c` | `cd` the tab to the folder under the cursor |
+| `]g` / `[g` | Next / previous file with git changes |
+| `]d` / `[d` | Next / previous file with a diagnostic |
+| `<space>as` | Add the file under the cursor to Claude's context |
+| `q` / `Esc` | Close |
+
+### Oil (`-`, edit a directory as text)
+
+| Keys | What |
+|---|---|
+| `-` | Open the parent directory of the current file; `-` again goes up |
+| `Enter` | Open the file / enter the folder |
+| `Ctrl-s` / `Ctrl-h` / `Ctrl-t` | Open in a vertical split / horizontal split / new tab |
+| `Ctrl-p` | Preview |
+| edit the text, then `:w` | Rename a line to rename the file, `dd` to delete, `o` + name to create, `yy` + `p` to copy; nothing happens until you save |
+| `_` | Open the working directory |
+| `` ` `` | `cd` to this directory |
+| `g.` | Toggle hidden files (on by default here) |
+| `gs` | Change sort order |
+| `gx` | Open with the system app |
+| `g?` | Oil's own help |
+| `Ctrl-c` / `Ctrl-l` | Close / refresh |
+| `<space>as` | Add the file under the cursor to Claude's context |
+
+Rule of thumb: browsing and single actions, explorer. Renaming or moving several
+files at once, oil, because you can use every normal editing trick and review the
+change list before `:w` applies it.
+
 ## Pin and switch
 
 | Keys | What |
