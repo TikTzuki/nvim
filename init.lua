@@ -6,6 +6,11 @@ vim.g.maplocalleader = " "
 -- subtle RGB highlights that wash out under 256-color approximation).
 vim.opt.termguicolors = true
 
+-- System-clipboard copy/paste without the "+ register dance.
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Copy to system clipboard" })
+vim.keymap.set("n", "<leader>yy", [["+yy]], { desc = "Copy line to system clipboard" })
+vim.keymap.set({ "n", "v" }, "<leader>p", [["+p]], { desc = "Paste from system clipboard" })
+
 -- In terminal mode (e.g. the Claude panel), keys normally go to the terminal
 -- program, so Ctrl-w window commands don't work. These mappings restore them.
 vim.keymap.set("t", "<C-w>h", [[<C-\><C-n><C-w>h]], { desc = "Window left" })
